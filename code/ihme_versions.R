@@ -7,7 +7,7 @@ library(ggplot2)
 library(stringr)
 library(RColorBrewer)
 
-data_dir <- paste0(getwd(),"/../estimates/")
+data_dir <- paste0(getwd(),"/estimates/")
 
 ## identify folders of different version dates
 folds <- dir(data_dir)
