@@ -1,6 +1,7 @@
 # ihme_covid_ests
 
 Estimates folder contains downloaded versions of IHME COVID-19 estimates
+https://covid19.healthdata.org/projections
 
 PDF files contain data release information sheets from IHME
 
