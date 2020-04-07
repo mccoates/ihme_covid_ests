@@ -1,4 +1,4 @@
-# ihme_us_covid_ests
+# ihme_covid_ests
 
 Estimates folder contains downloaded versions of IHME COVID-19 estimates
 
