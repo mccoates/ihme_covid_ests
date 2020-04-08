@@ -36,3 +36,5 @@ d[,date_form:=as.Date(date)]
 ## clean up variables duplicated through changing of formats
 d[,c("location"):=NULL]
 
+## Write the results to an output/ folder
+write.csv(d, file="output/compiled_estimates.csv",row.names = F)
