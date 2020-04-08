@@ -25,16 +25,23 @@ d <- lapply(folds,FUN=function(x) {
   if (x %in% folds[c(1:2)]) setnames(out,"date_reported","date")
   ## location_name seems to be used in all of them, but location introduced in more recent ones
   out[,location:=location_name]
+  ## seems like two different US names in different versions of data
+  out[location_name=="US",location_name:="United States of America"]
+  
+  ## add date downloaded
+  dd <- read.table(paste0(data_dir,x,"/download_date_time.txt"),sep=" ")
+  out[,date_downloaded:=dd$V1]
 })
 
 d <- rbindlist(d,use.names=T)
 
-## seems like two different US names
-d[location_name=="US",location_name:="United States of America"]
-d[,date_form:=as.Date(date)]
+d[,date:=as.Date(date)]
+d[,date_downloaded:=as.Date(date_downloaded)]
 
 ## clean up variables duplicated through changing of formats
 d[,c("location"):=NULL]
 
 ## Write the results to an output/ folder
 write.csv(d, file="output/compiled_estimates.csv",row.names = F)
+#saveRDS(d, file="output/compiled_estimates.rds")
+
