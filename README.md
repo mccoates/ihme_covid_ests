@@ -1,6 +1,7 @@
 # ihme_covid_ests
 
 NOTE: IHME HAS RELEASED PREVIOUS DATASETS
+
 They can be found straight from the source here: http://www.healthdata.org/covid/data-downloads
 
 
