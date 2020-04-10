@@ -15,6 +15,7 @@ folds <- folds[!grepl(".pdf",folds)]
 
 ## load in estimates -- some variables named differently across datasets, so fix these
 d <- lapply(folds,FUN=function(x) {
+  cat(paste0(x)); flush.console()
   fl <- dir(paste0(data_dir,x),pattern=".csv")
   out <- fread(paste0(data_dir,x,"/",fl))
   ## some appear to have a row number column
