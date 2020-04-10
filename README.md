@@ -1,5 +1,10 @@
 # ihme_covid_ests
 
+NOTE: IHME HAS RELEASED PREVIOUS DATASETS
+They can be found straight from the source here: http://www.healthdata.org/covid/data-downloads
+
+
+
 Estimates folder contains downloaded versions of IHME COVID-19 estimates
 https://covid19.healthdata.org/projections
 
