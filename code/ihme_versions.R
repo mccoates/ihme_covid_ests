@@ -36,14 +36,14 @@ d <- lapply(folds,FUN=function(x) {
   
   ## add IHME estimate date from website
   ii <- read.table(paste0(data_dir,x,"/ihme_estimate_date.txt"),sep=" ")
-  out[,ihme_estimate_date:=ii$V1]
+  out[,ihme_model_date:=ii$V1]
 })
 
 d <- rbindlist(d,use.names=T)
 
 d[,date:=as.Date(date)]
 d[,date_downloaded:=as.Date(date_downloaded)]
-d[,ihme_estimate_date:=as.Date(ihme_estimate_date)]
+d[,ihme_model_date:=as.Date(ihme_model_date)]
 
 ## clean up variables duplicated through changing of formats
 d[,c("location"):=NULL]
