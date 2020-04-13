@@ -62,7 +62,7 @@ write.csv(d, file="output/compiled_estimates.csv",row.names = F)
 # Save a dataset for the model comparison visualization
 # https://observablehq.com/@mkfreeman/ihme-model-comparisons
 d %>% 
-  select(location_name, date, icuover_mean, deaths_mean, bedover_mean) %>% 
+  select(location_name, date, model_version, icuover_mean, deaths_mean, bedover_mean) %>% 
   write.csv(file="output/model_comparison_data.csv", row.names = F)
 
 #saveRDS(d, file="output/compiled_estimates.rds")
