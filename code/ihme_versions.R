@@ -6,6 +6,7 @@ library(data.table)
 library(ggplot2)
 library(stringr)
 library(RColorBrewer)
+library(dplyr)
 
 data_dir <- paste0(getwd(),"/estimates/")
 
@@ -57,6 +58,13 @@ d <- d[!model_version %in% c("2020_04_07.04.all")]
 
 ## Write the results to an output/ folder
 write.csv(d, file="output/compiled_estimates.csv",row.names = F)
+
+# Save a dataset for the model comparison visualization
+# https://observablehq.com/@mkfreeman/ihme-model-comparisons
+d %>% 
+  select(location_name, date, icuover_mean, deaths_mean, bedover_mean) %>% 
+  write.csv(file="output/model_comparison_data.csv", row.names = F)
+
 #saveRDS(d, file="output/compiled_estimates.rds")
 
 
