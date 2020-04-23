@@ -57,7 +57,7 @@ d <- d[!model_version %in% c("2020_04_07.04.all")]
 
 
 ## Write the results to an output/ folder
-write.csv(d, file="output/compiled_estimates.csv",row.names = F)
+saveRDS(d, file="output/compiled_estimates.RDS")
 
 # Save a dataset for the model comparison visualization
 # https://observablehq.com/@mkfreeman/ihme-model-comparisons

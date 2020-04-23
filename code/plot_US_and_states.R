@@ -3,7 +3,7 @@ rm(list=ls())
 library(data.table)
 library(ggplot2)
 
-d <- fread("output/compiled_estimates.csv")
+d <- readRDS("output/compiled_estimates.rds")
 
 ## identify states and US based on locations from model published before adding extra locations
 locs <- unique(d[date_downloaded == "2020-03-27"]$location_name)
