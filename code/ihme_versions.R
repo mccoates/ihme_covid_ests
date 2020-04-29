@@ -21,6 +21,8 @@ d <- lapply(folds,FUN=function(x) {
   out <- fread(paste0(data_dir,x,"/",fl))
   ## some appear to have a row number column
   if (!is.null(out$V1)) out[,V1:=NULL]
+  ## location_id was added -- at some point, locations from old datasets will need to be back-filled with location_id to prevent confusion (e.g. Georgia vs. Georgia)
+  if (is.null(out$location_id)) out[,location_id:=NA]
   ## name of folder that the dataset came from as model version
   out[,model_version:=x]
   ## variable names can be different across datasets -- "date reported" is used instead of "date" for first two releases, make these consistent
