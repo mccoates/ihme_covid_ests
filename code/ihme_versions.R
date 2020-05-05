@@ -18,6 +18,7 @@ folds <- folds[!grepl(".pdf",folds)]
 d <- lapply(folds,FUN=function(x) {
   cat(paste0(x)); flush.console()
   fl <- dir(paste0(data_dir,x),pattern=".csv")
+  fl <- fl[!grepl("summary_stats_all",fl)]
   out <- fread(paste0(data_dir,x,"/",fl))
   ## some appear to have a row number column
   if (!is.null(out$V1)) out[,V1:=NULL]
@@ -41,7 +42,12 @@ d <- lapply(folds,FUN=function(x) {
   out[,ihme_model_date:=ii$V1]
 })
 
-d <- rbindlist(d,use.names=T)
+d <- rbindlist(d,use.names=T,fill=T)
+
+## will eventually expand to new variables, but for now, removing
+## model changed on May 4, 2020 to include mobility data, tests, and infections
+d[,c("mobility_data_type","mobility_composite","total_tests_data_type","total_tests","confirmed_infections","est_infections_mean","est_infections_lower","est_infections_upper"):=NULL]
+
 
 d[,date:=as.Date(date)]
 d[,date_downloaded:=as.Date(date_downloaded)]
