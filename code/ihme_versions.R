@@ -19,6 +19,7 @@ d <- lapply(folds,FUN=function(x) {
   cat(paste0(x)); flush.console()
   fl <- dir(paste0(data_dir,x),pattern=".csv")
   fl <- fl[!grepl("summary_stats_all",fl)]
+  fl <- fl[!grepl("Summary_stats_all",fl)]
   out <- fread(paste0(data_dir,x,"/",fl))
   ## some appear to have a row number column
   if (!is.null(out$V1)) out[,V1:=NULL]
