@@ -1,5 +1,9 @@
 # ihme_covid_ests
 
+
+THIS REPOSITORY HAS NOT BEEN MAINTAINED SINCE MAY 10, 2020
+
+
 NOTE: IHME HAS RELEASED PREVIOUS DATASETS
 
 They can be found straight from the source here: http://www.healthdata.org/covid/data-downloads
