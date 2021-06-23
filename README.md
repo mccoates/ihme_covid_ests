@@ -2,6 +2,7 @@
 
 
 THIS REPOSITORY HAS NOT BEEN MAINTAINED SINCE MAY 10, 2020
+
 I WAS DOWNLOADING ALL VERSIONS OF IHME COVID ESTIMATES, BUT IHME HAS RELEASED PREVIOUS DATASETS
 
 They can be found straight from the source here: http://www.healthdata.org/covid/data-downloads
